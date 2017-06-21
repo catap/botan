@@ -266,7 +266,7 @@ std::string EC_Group::PEM_for_named_group(const std::string& name)
          "8f0XjAs61Y8QEm3ozkJDW1PcZ+FA0r+UH/3UWcbWVeECAQE="
          "-----END EC PARAMETERS-----";
 
-   if(name == "sm2p256")
+   if(name == "sm2p256v1")
       return
          "-----BEGIN EC PARAMETERS-----"
          "MIHgAgEBMCwGByqGSM49AQECIQD////+/////////////////////wAAAAD/////"

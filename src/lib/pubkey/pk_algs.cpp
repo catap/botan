@@ -304,6 +304,7 @@ create_private_key(const std::string& alg_name,
       alg_name == "ECDH" ||
       alg_name == "ECKCDSA" ||
       alg_name == "ECGDSA" ||
+      alg_name == "SM2_Sig" ||
       alg_name == "GOST-34.10")
       {
       const EC_Group ec_group(params.empty() ? "secp256r1" : params);

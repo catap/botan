@@ -19,6 +19,7 @@ std::string lookup(const OID& oid)
    {
    const std::string oid_str = oid.as_string();
    if(oid_str == "1.0.14888.3.0.5") return "ECKCDSA";
+   if(oid_str == "1.2.156.10197.1.301") return "sm2p256v1";
    if(oid_str == "1.2.156.10197.1.301.1") return "SM2_Sig";
    if(oid_str == "1.2.156.10197.1.301.2") return "SM2_Kex";
    if(oid_str == "1.2.156.10197.1.301.3") return "SM2_Enc";
@@ -394,6 +395,7 @@ OID lookup(const std::string& name)
    if(name == "secp256r1") return OID("1.2.840.10045.3.1.7");
    if(name == "secp384r1") return OID("1.3.132.0.34");
    if(name == "secp521r1") return OID("1.3.132.0.35");
+   if(name == "sm2p256v1") return OID("1.2.156.10197.1.301");
    if(name == "x962_p192v2") return OID("1.2.840.10045.3.1.2");
    if(name == "x962_p192v3") return OID("1.2.840.10045.3.1.3");
    if(name == "x962_p239v1") return OID("1.2.840.10045.3.1.4");
