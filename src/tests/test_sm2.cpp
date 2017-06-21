@@ -14,6 +14,8 @@
 
 namespace Botan_Tests {
 
+#if defined(BOTAN_HAS_SM2)
+
 namespace {
 
 class SM2_Signature_KAT_Tests : public PK_Signature_Generation_Test
@@ -61,5 +63,6 @@ class SM2_Signature_KAT_Tests : public PK_Signature_Generation_Test
 }
 
 BOTAN_REGISTER_TEST("sm2_sig", SM2_Signature_KAT_Tests);
+#endif
 
 }
