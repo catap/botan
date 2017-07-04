@@ -20,6 +20,7 @@
 #if defined(BOTAN_HAS_RC4)
 #include <openssl/rc4.h>
 #endif
+#include <openssl/ssl.h>
 
 namespace Botan {
 
@@ -34,7 +35,13 @@ class OpenSSL_Error : public Exception
    {
    public:
       OpenSSL_Error(const std::string& what) :
-         Exception(what + " failed: " + ERR_error_string(ERR_get_error(), nullptr)) {}
+         Exception(what + " failed: " + get_ssl_error()) {}
+
+   private:
+      static std::string get_ssl_error() {
+          SSL_load_error_strings();
+          return ERR_error_string(ERR_get_error(), nullptr);
+      }
    };
 
 /* Block Ciphers */
